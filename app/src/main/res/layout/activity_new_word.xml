@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/card_selector">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/header_selector"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"/>
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:spinnerMode="dropdown"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/appbar"
+    android:layout_above="@+id/reminder_ll">
+
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/et_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="6dp"
+        android:background="@color/cardview_light_background">
+
+    <EditText
+        android:id="@+id/edit_word"
+        style="@style/word_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Note"
+        android:padding="8dp"
+        android:gravity="top|left"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:minLines="4"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:background="@color/cardview_light_background"/>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+
+</ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reminder_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="6dp"
+        android:background="@color/cardview_light_background">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_light_background"
+            android:layout_marginLeft="8dp"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:text="Reminder: No reminder"/>
+            <TextView
+                android:id="@+id/repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_light_background"
+                android:layout_marginLeft="8dp"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:text="Repeat: No Repeat"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/timer_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_delete"
+            />
+        </RelativeLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        >
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/set_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_selector"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_clock2" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#000000"
+            android:src="@drawable/ic_save" />
+
+    </LinearLayout>
+
+</RelativeLayout>
